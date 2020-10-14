@@ -2,6 +2,9 @@ let inp = document.forms['cal']
 let input = inp.getElementsByTagName("input")
 let cls_btn = document.getElementsByClassName('cls_btn')[0];
 let result_btn = document.getElementsByClassName('result_btn')[0];
+let one_cln = document.getElementsByClassName("one_cln")[0];
+let result_arr = [0,];
+let result_dis = 0;
 
 for(let i=0;i<input.length;i++){
 
@@ -10,11 +13,19 @@ for(let i=0;i<input.length;i++){
             calc(this.value);
         }
     }
+
 }
 
 cls_btn.onclick = function(){
     clr();
 }
+
+one_cln.onclick = function(){
+    result_arr = inp['result'].value.split("");
+    result_arr.pop();
+    result_dis = result_arr.join("");
+    inp['result'].value = result_dis;
+  }
 
 result_btn.onclick = function(){
     try{
@@ -25,6 +36,8 @@ result_btn.onclick = function(){
         result.value = "입력 오류";
     }
 }
+
+
 
 function calc(value){
     if(inp['result'].value == 0){
