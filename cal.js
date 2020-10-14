@@ -17,7 +17,13 @@ cls_btn.onclick = function(){
 }
 
 result_btn.onclick = function(){
-    my_result();
+    try{
+        my_result();
+    }
+    catch(err){
+        let result = inp["result"];
+        result.value = "입력 오류";
+    }
 }
 
 function calc(value){
