@@ -16,6 +16,10 @@ cls_btn.onclick = function(){
     clr();
 }
 
+result_btn.onclick = function(){
+    my_result();
+}
+
 function calc(value){
     if(inp['result'].value == 0){
         inp['result'].value = '';
@@ -27,4 +31,11 @@ function calc(value){
 
 function clr(){
     inp['result'].value = 0;
+}
+
+function my_result(){
+    let result = document.forms["cal"]["result"];
+    let calc = eval(result.value);
+
+    inp["result"].value = calc;
 }
