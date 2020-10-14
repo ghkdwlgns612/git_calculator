@@ -12,10 +12,19 @@ for(let i=0;i<input.length;i++){
     }
 }
 
+cls_btn.onclick = function(){
+    clr();
+}
+
 function calc(value){
     if(inp['result'].value == 0){
         inp['result'].value = '';
     }
 
     inp['result'].value += value;
+}
+
+
+function clr(){
+    inp['result'].value = 0;
 }
